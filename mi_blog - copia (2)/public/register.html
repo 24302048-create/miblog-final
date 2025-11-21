@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro - NATALY.blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>NATALY.blog - Registro</h1></header>
+<section>
+  <main>
+    <h2>Hazte miembro</h2>
+    <form id="formRegistro">
+      <label>Nombre</label><br>
+      <input id="regNombre" required><br><br>
+
+      <label>Email</label><br>
+      <input id="regEmail" type="email" required><br><br>
+
+      <label>Contraseña</label><br>
+      <input id="regPass" type="password" required><br><br>
+
+      <button type="submit">Registrarme</button>
+    </form>
+
+    <p id="msgReg"></p>
+    <p><a href="index.html">Ir a iniciar sesión</a></p>
+  </main>
+</section>
+  <script>
+    const API = "http://localhost:3000/api";
+    document.getElementById("formRegistro").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById("regNombre").value.trim();
+      const email = document.getElementById("regEmail").value.trim();
+      const password = document.getElementById("regPass").value;
+
+      const res = await fetch(`${API}/registro`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, email, password })
+      });
+
+      const data = await res.json();
+      const msg = document.getElementById("msgReg");
+
+      if (!data.success) {
+        msg.style.color = "red";
+        msg.textContent = data.message || "Error en registro";
+        return;
+      }
+
+      msg.style.color = "green";
+      msg.textContent = "Usuario registrado. Ahora inicia sesión.";
+      setTimeout(()=> window.location.href = "index.html", 1000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - NATALY.blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>NATALY.blog</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Iniciar sesión</a></li>
+      <li><a href="inicio.html">Inicio</a></li> |
+      <li><a href="sobre-mi.html">Sobre mi</a></li> |
+      <li><a href="register.html">Hazte miembro</a></li> |
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+  </nav>
+</header>
+ <section>
+    <h2 id="saludoUsuario">Hola visitante</h2>
+    <p>Bienvenido a mi blog 💗 Aquí podrás comentar si ya iniciaste sesión.</p>
+  </section>
+
+  <section id="clima">
+  <h2>Clima por ciudad</h2>
+
+  <form id="formClima">
+    <input type="text" id="inputCiudad" placeholder="Escribe una ciudad..." required>
+    <button type="submit">Buscar</button>
+  </form>
+
+  <p id="errorClima" style="color:red;"></p>
+
+  <div id="resultadoClima" class="oculto">
+    <h3 id="nombreCiudad"></h3>
+    <p id="temp"></p>
+    <p id="humedad"></p>
+    <p id="viento"></p>
+    <p id="estado"></p>
+  </div>
+</section>
+<section>
+<main>
+  <p id="usuarioLog" style="font-weight:bold;"></p>
+
+  <section id="crearPublicacion" style="display:none;">
+    <h3>Crear publicación</h3>
+    <textarea id="postTexto" rows="4" style="width:100%"></textarea><br>
+    <button id="btnPublicar">Publicar</button>
+    <p id="msgPublicar" style="color:#b71c1c;"></p>
+  </section>
+</section>
+<section>
+  <h2>Publicaciones</h2>
+  <div id="publicaciones"></div>
+</main>
+</section>
+<footer>
+    <p>&copy; 2025 Nataly Blog - Todos los derechos reservados.</p>
+  </footer>
+<script src="script.js">
+  
+
+</script>
+</body>
+</html>
+

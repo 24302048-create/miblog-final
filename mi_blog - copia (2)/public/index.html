@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - NATALY.blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>NATALY.blog - Login</h1></header>
+<section>
+  <main>
+    <form id="formLogin">
+      <label>Email</label><br>
+      <input id="loginEmail" type="email" required><br><br>
+
+      <label>Contraseña</label><br>
+      <input id="loginPass" type="password" required><br><br>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p id="msgLogin"></p>
+
+    <p>O <a href="#" id="entradaInvitado">Entrar como invitado</a></p>
+    <p>¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
+  </main>
+</section>
+  <script>
+    const API = "http://localhost:3000/api";
+
+    document.getElementById("formLogin").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPass").value;
+
+      const res = await fetch(`${API}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      const msg = document.getElementById("msgLogin");
+
+      if (!data.success) {
+        msg.style.color = "red";
+        msg.textContent = data.message || "Error al iniciar sesión";
+        return;
+      }
+
+      // Guardar sesión en localStorage
+      localStorage.setItem("usuario_id", data.id);
+      localStorage.setItem("usuario_nombre", data.nombre);
+      localStorage.setItem("invitado", "false");
+
+      // Redirigir a inicio
+      window.location.href = "inicio.html";
+    });
+
+    document.getElementById("entradaInvitado").addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("usuario_id");
+      localStorage.setItem("usuario_nombre", "Invitado");
+      localStorage.setItem("invitado", "true");
+      window.location.href = "inicio.html";
+    });
+  </script>
+</body>
+</html>

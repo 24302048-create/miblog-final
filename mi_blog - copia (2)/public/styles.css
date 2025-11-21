@@ -1,0 +1,178 @@
+/* =============================
+   ESTILOS GENERALES
+============================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fdf3fa; /* Fondo pastel suave */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =============================
+   HEADER Y MENÚ
+============================= */
+header {
+  background: #ffb6e6;
+  width: 100%;
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  margin-bottom: 25px;
+}
+
+h1 {
+  background-color: #d600a1c7;
+  padding: 12px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: #5f0045;
+}
+
+/* =============================
+   SECCIONES GENERALES
+============================= */
+section {
+  padding: 25px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 850px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.12);
+}
+
+h2 {
+  color: #a02b83;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 22px;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* =============================
+   FORMULARIOS
+============================= */
+form input,
+form textarea,
+form button {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form button {
+  background: #b0178c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+form button:hover {
+  background: #7a005c;
+}
+
+/* =============================
+   PUBLICACIONES
+============================= */
+.publicacion {
+  padding: 15px;
+  background: #fff6fc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 5px solid #c21998;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.publicacion strong {
+  font-size: 17px;
+  color: #a02b83;
+}
+
+.publicacion small {
+  color: #555;
+}
+
+/* =============================
+   COMENTARIOS
+============================= */
+#comentarios div,
+.comentario-item {
+  padding: 12px;
+  background: #fafafa;
+  border-left: 4px solid #a02b83;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+/* =============================
+   BOTONES
+============================= */
+button {
+  background: #b0178c;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #7c0063;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  background: #ffb6e6;
+  width: 100%;
+  text-align: center;
+  padding: 18px;
+  margin-top: 35px;
+  color: white;
+  font-weight: bold;
+  border-top: 3px solid #e200a1;
+}
